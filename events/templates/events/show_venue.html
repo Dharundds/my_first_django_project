@@ -1,0 +1,42 @@
+{% extends 'events/base.html' %}
+{% block content %}
+    
+      <h1>Venue</h1>
+      <ul>
+      
+
+      <div class="card">
+            <div style="color: blue;" class="card-header">
+             {{venue}}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><b>Venue:</b> {{venue.venue}}</h5>
+              <p class="card-text"> <ul>
+                  <li> <b>Address:</b>  {{venue.address}}</li> 
+                  <li> <b>Pincode</b> : {{venue.pincode}}</li> 
+                  {% if venue.phone%}
+                  <li> <b>Description</b>: {{venue.phone}}</li> 
+                  {% else  %}
+                  <li> <b>Description</b>:  No Phone number for this venue</li> 
+                  {% endif %}
+
+
+                  {% if venue.web%}
+                  <li> <b>Description</b>: <a href="{{venue.web}}">{{venue.web}}</a> </li> 
+                  {% else  %}
+                  <li> <b>Description</b>:  No Website for this venue</li> 
+                  {% endif %}
+
+                 
+                  {% if venue.email_address%}
+                  <li> <b>Description</b>: {{venue.email_address}}</li> 
+                  {% else  %}
+                  <li> <b>Description</b>:  No Email for this venue</li> 
+                  {% endif %}
+                  </ul></p>
+            </div>
+          </div>
+          <br>
+        
+        </ul>
+{% endblock %}
